@@ -3,13 +3,17 @@
 移动开发平台（Mobile PaaS，简称 mPaaS）是源于支付宝 App 的移动开发平台，为移动开发、测试、运营及运维提供云到端的一站式解决方案，能有效降低技术门槛、减少研发成本、提升开发效率，协助企业快速搭建稳定高质量的移动 App。
 
 ## 本插件
-本插件集合了[阿里的移动开发平台mPaas](url:https://help.aliyun.com/document_detail/49549.html)中的标准UI扫一扫部分，安装本插件前请先安装[cordova-plugin-mPaaS-core-higer](url:https://github.com/ty793941/cordova-plugin-mPaaS-core-higer),否则会报依赖错误
+本插件集合了[阿里的移动开发平台mPaas](https://help.aliyun.com/document_detail/49549.html)中的标准UI扫一扫部分，安装本插件前请先安装[cordova-plugin-mPaaS-core-higer](https://github.com/ty793941/cordova-plugin-mPaaS-core-higer),否则会报依赖错误
 
 
 ## 使用
 
 ### 1.安装：
-> cordova plugin add 尚未发布
+安装core插件，若已安装可忽略
+> cordova plugins add cordova-plugin-mpaas-core-higer
+
+安装scan插件 
+> cordova plugin add cordova-plugin-mpaas-scan-higer
 
 ### 2. 复制config文件
 
