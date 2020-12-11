@@ -1,11 +1,13 @@
 {
-  "name": "mpaasscan",
-  "version": "1.0.1",
+  "name": "cordova-plugin-mpaas-scan-higer",
+  "version": "1.0.2",
   "description": "基于阿里mPaaS平台开发的扫码插件，需与Core一起使用",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "higer.zhang",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ty793941/cordova-plugin-mpaas-scan-higer"
   },
-  "author": "",
-  "license": "ISC"
+  "keywords": ["cordova","mpaas","scan"]
 }
