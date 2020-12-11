@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-mpaas-scan-higer" version="1.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>mPaaSScan</name>
+    <hook type="after_plugin_install" src="scripts/afterPluginInstall.js" />
+    <js-module name="mPaaSScan" src="www/mPaaSScan.js">
+        <clobbers target="mPaaS" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="mPaaSScan">
+                <param name="android-package" value="higer.plugin.mpaas.scan.scan" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/scan/scan.java" target-dir="src/higer/plugin/mpaas/scan" />
+        <framework src="src/android/scan/scan.gradle" custom="true" type="gradleReference"/>
+    </platform>
+</plugin>

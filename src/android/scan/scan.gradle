@@ -1,0 +1,21 @@
+apply plugin: 'com.alipay.apollo.baseline.config'
+
+repositories {
+    maven {
+            url 'http://mvn.cloud.alipay.com/nexus/content/repositories/releases/'
+            name 'alipay'
+            credentials {
+                username 'mvn_read_ws'
+                password 'mrk8929'
+            }
+        }
+}
+dependencies {
+    implementation platform("com.mpaas.android:$mpaas_artifact:$mpaas_baseline")
+
+    // SUB-PROJECT DEPENDENCIES START
+    implementation 'com.mpaas.android:scan'
+    // SUB-PROJECT DEPENDENCIES END
+}
+
+

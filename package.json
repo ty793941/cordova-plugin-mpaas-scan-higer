@@ -1,0 +1,11 @@
+{
+  "name": "mpaasscan",
+  "version": "1.0.1",
+  "description": "基于阿里mPaaS平台开发的扫码插件，需与Core一起使用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
