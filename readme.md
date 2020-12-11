@@ -35,7 +35,7 @@
       closeTorchText: 'closeTorchText', // 设置关闭手电筒提示文字，
       translucentStatusBar: true, // 设置透明状态栏
       notSupportAlbum: false, // 设置是否不支持相册，默认支持相册，false，
-      recognize: 'QR_CODE'// 该设置仅对直接扫码生效，对识别相册图片无效, 不设置，默认识别前三种QR_CODE、BAR_CODE、DM_CODE
+      recognize: 'QR_CODE,BAR_CODE'// 该设置仅对直接扫码生效，对识别相册图片无效, 不设置，默认识别前三种QR_CODE、BAR_CODE、DM_CODE
     }, (data:string) => {
       alert(data);// 成功处理
     }, (err:string) => {
