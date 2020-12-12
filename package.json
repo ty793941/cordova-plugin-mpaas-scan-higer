@@ -2,6 +2,12 @@
   "name": "cordova-plugin-mpaas-scan-higer",
   "version": "1.0.2",
   "description": "基于阿里mPaaS平台开发的扫码插件，需与Core一起使用",
+  "cordova": {
+    "id": "cordova-plugin-mpaas-scan-higer",
+    "platforms": [
+      "android"
+    ]
+  },
   "main": "index.js",
   "author": "higer.zhang",
   "license": "ISC",

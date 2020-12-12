@@ -1,5 +1,5 @@
 var exec = require('cordova/exec');
 
-exports.standardScan = function (arg0, success, error) {
-    exec(success, error, 'mPaaSScan', 'standardScan', [arg0]);
+exports.standardScan = function (options, success, error) {
+    exec(success, error, 'mPaaSScan', 'standardScan', [options]);
 };
