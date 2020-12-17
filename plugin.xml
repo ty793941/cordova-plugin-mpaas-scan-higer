@@ -3,7 +3,8 @@
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>mPaaSScan</name>
-    <hook type="after_plugin_install" src="scripts/afterPluginInstall.js" />
+    <hook src="scripts/afterPluginInstall.js" type="after_plugin_install" />
+    <hook type="before_plugin_rm" src="scripts/beforePluginRemove.js" />
     <js-module name="mPaaSScan" src="www/mPaaSScan.js">
         <clobbers target="mPaaS" />
     </js-module>
@@ -14,8 +15,21 @@
                 <param name="android-package" value="higer.plugin.mpaas.scan.scan" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
         <source-file src="src/android/scan/scan.java" target-dir="src/higer/plugin/mpaas/scan" />
-        <framework src="src/android/scan/scan.gradle" custom="true" type="gradleReference"/>
+        <framework custom="true" src="src/android/scan/scan.gradle" type="gradleReference" />
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="mPaaSScan">
+                <param name="ios-package" value="mPaaSScan" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/MPScanCodeViewController.h" />
+        <header-file src="src/ios/ViewController.h" />
+        <source-file src="src/ios/mPaaSScan.m" />
+        <source-file src="src/ios/MPScanCodeViewController.m" />
+        <source-file src="src/ios/ViewController.m" />
+        <source-file src="src/ios/Prefix.pch" />
     </platform>
 </plugin>
