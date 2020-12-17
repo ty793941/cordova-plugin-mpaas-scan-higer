@@ -5,6 +5,7 @@
     <name>mPaaSScan</name>
     <hook src="scripts/afterPluginInstall.js" type="after_plugin_install" />
     <hook type="before_plugin_rm" src="scripts/beforePluginRemove.js" />
+
     <js-module name="mPaaSScan" src="www/mPaaSScan.js">
         <clobbers target="mPaaS" />
     </js-module>
@@ -25,11 +26,15 @@
                 <param name="ios-package" value="mPaaSScan" />
             </feature>
         </config-file>
+<<<<<<< HEAD
         <header-file src="src/ios/MPScanCodeViewController.h" />
         <header-file src="src/ios/ViewController.h" />
         <source-file src="src/ios/mPaaSScan.m" />
         <source-file src="src/ios/MPScanCodeViewController.m" />
         <source-file src="src/ios/ViewController.m" />
         <source-file src="src/ios/Prefix.pch" />
+=======
+        <source-file src="src/ios/mPaaSScan.m" />
+>>>>>>> a63a98b24607fcf2f47ef2c73f5a22d429a7fe4b
     </platform>
 </plugin>
