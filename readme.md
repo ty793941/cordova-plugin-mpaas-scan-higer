@@ -28,14 +28,14 @@
 #### 高级使用
 >
     mPaaS.standardScan({
-      scanType: 'QRCODE', // 判断扫码框，是QRCODE 还是BARCODE，默认QRCODE
+      scanType: 'QRCODE', // 判断扫码框，是QRCODE 还是BARCODE，默认QRCODE  --IOS不生效，只显示QRCODE
       titleText: 'titleText', // 设置扫码界面 title
-      viewText: 'viewText', // 设置扫码窗口下提示文字
+      viewText: 'viewText', // 设置扫码窗口下提示文字      --IOS不显示
       openTorchText: 'openTorchText', // 设置打开手电筒提示文字，
       closeTorchText: 'closeTorchText', // 设置关闭手电筒提示文字，
-      translucentStatusBar: true, // 设置透明状态栏
+      translucentStatusBar: true, // 设置透明状态栏       --IOS不生效
       notSupportAlbum: false, // 设置是否不支持相册，默认支持相册，false，
-      recognize: 'QR_CODE,BAR_CODE'// 该设置仅对直接扫码生效，对识别相册图片无效, 不设置，默认识别前三种QR_CODE、BAR_CODE、DM_CODE
+      recognize: 'QR_CODE,BAR_CODE'// 该设置仅对直接扫码生效，对识别相册图片无效。所有枚举：'QR_CODE,BAR_CODE,DM_CODE,PDF417_Code', 不设置，默认识别前三种     --IOS不支持配置，但是会支持过多
     }, (data:string) => {
       alert(data);// 成功处理
     }, (err:string) => {
