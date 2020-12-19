@@ -36,6 +36,8 @@
     self.title = @"扫码";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"相册" style:UIBarButtonItemStylePlain target:self action:@selector(selectPhoto)];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(dismissModalViewControllerAnimated:)];
+
     CGRect rect = [MPScanCodeViewController constructScanAnimationRect];
     if (self.usingDefaultStyle) {
         self.animationRect = rect;
