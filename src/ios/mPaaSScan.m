@@ -1,7 +1,6 @@
 /********* mPaaSScan.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
-#import "ViewController.h"
 
 
 @interface mPaaSScan : CDVPlugin {
