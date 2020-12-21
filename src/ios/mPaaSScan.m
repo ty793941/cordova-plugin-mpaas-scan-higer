@@ -27,12 +27,22 @@
 // 唤醒默认扫码ui
 - (void)custoDefaultScan:(NSString*)callbackId withOptions:(NSDictionary *) echo{
    TBScanViewController *vc = [[MPScanCodeAdapterInterface sharedInstance] createDefaultScanPageWithallback:^(id  _Nonnull result, BOOL keepAlive) {
-       //扫码成功回调
-       CDVPluginResult* pluginResult= [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result[@"resp_result"]];
-       //返回结果
-       [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+       //TODO 判断返回结果
+       NSString *res=result[@"resp_code"];
+       CDVPluginResult* pluginResult= nil;
+       if([res isEqual:@"1000"])
+       {
+           //扫码成功回调
+           pluginResult= [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result[@"resp_result"]];
+       }
+       else
+       {
+           pluginResult= [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"fail"];
+       }
        //关闭扫码窗口
        [self dismiss];
+       //返回结果
+       [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
     }];
 
     //扫码窗口，增加导航条
@@ -41,8 +51,10 @@
     //呈现扫码界面
     [self.viewController presentViewController:nav animated:NO completion:^{
     }];
+    
     //设置扫码属性
     self.scanVC =  [self setScanVCOptions:echo withOptions:vc];
+    
     //原扫码ui 在导航左边增加关闭按钮
     vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
 }
@@ -111,7 +123,8 @@
         //do nothing
     }
 
-    
+    //todo 由于目前相册选取图片在回调的时候sendPluginResult会卡死，暂未找到原因，所以先注释掉了。
+    vc.navigationItem.rightBarButtonItem=nil;
     return vc;
 }
 

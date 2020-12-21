@@ -29,7 +29,7 @@
             </feature>
         </config-file>
         <source-file src="src/ios/mPaaSScan.m" />
-                 <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+        <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
          <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
              <string>$CAMERA_USAGE_DESCRIPTION</string>
          </config-file>
