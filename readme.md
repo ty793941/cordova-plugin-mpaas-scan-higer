@@ -34,7 +34,7 @@
       openTorchText: 'openTorchText', // 设置打开手电筒提示文字，
       closeTorchText: 'closeTorchText', // 设置关闭手电筒提示文字，
       translucentStatusBar: true, // 设置透明状态栏       --IOS不生效
-      notSupportAlbum: false, // 设置是否不支持相册，默认支持相册，false，
+      notSupportAlbum: false, // 设置是否不支持相册，默认支持相册，false，  --ios 扫描相册二维码会卡死，先隐藏相册了
       recognize: 'QR_CODE,BAR_CODE'// 该设置仅对直接扫码生效，对识别相册图片无效。所有枚举：'QR_CODE,BAR_CODE,DM_CODE,PDF417_Code', 不设置，默认识别前三种     --IOS不支持配置，但是会支持过多
     }, (data:string) => {
       alert(data);// 成功处理
@@ -67,6 +67,11 @@
   方法2:platform remove ios 后，再add 进去
   >sudo cordova platform remove ios
   >sudo cordova platform add ios
+
+#### 5.在build的时候，长时间没有反应
+    正常现象：
+    1.第一次cordova build android时，需要下载gradle，一般需要10来分钟，也可以手工下载，放置C盘。
+    2.第一次cordova build ios 或者plugin add 时都会下载mpaas包，也大概需要10来分钟。
 
 ## 阶段
 本插件尚处于内部测试阶段，若有兴趣的可以直接使用，但暂不可直接用于生产环境。
