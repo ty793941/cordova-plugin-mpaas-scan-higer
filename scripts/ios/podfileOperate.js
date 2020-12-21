@@ -76,7 +76,10 @@ exports.setPodfile = function () {
 // 移除ios podfile scan 部分代码
 exports.removePodfile = function () {
     console.log('----------begin mpaas ios scan podfile remove----------')
-
+    if (!fs.existsSync(iosPlatformDir)) {
+        console.error("********************plugin not found the ios platform,and the mPaaS scan podfile not need to be removed");
+        return;
+    }
     //ios平台根目录
     var project_dir = iosPlatformDir;
     //找到项目名称
