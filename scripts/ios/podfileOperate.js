@@ -99,12 +99,5 @@ exports.removePodfile = function () {
 
     fs.writeFileSync(podfileFilePath, podfilePlatformStr);
 
-    var Podfile = require(path.join(iosPlatformDir + '/cordova/lib/Podfile')).Podfile;
-    var podfileFile = new Podfile(path.join(project_dir, podfileName), project_name);
-
-    var check_reqs = require(iosPlatformDir + '/cordova/lib/check_reqs');
-    // 写完后再执行下install
-    podfileFile.install(check_reqs.check_cocoapods);
-
     console.log('----------the mpaas ios scan podfile remove done----------')
 }

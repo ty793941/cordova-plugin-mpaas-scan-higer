@@ -123,8 +123,6 @@
         //do nothing
     }
 
-    //todo 由于目前相册选取图片在回调的时候sendPluginResult会卡死，暂未找到原因，所以先注释掉了。
-    vc.navigationItem.rightBarButtonItem=nil;
     return vc;
 }
 

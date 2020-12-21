@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-mpaas-scan-higer",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "基于阿里mPaaS平台开发的扫码插件，需与Core一起使用",
   "cordova": {
     "id": "cordova-plugin-mpaas-scan-higer",
