@@ -40,9 +40,10 @@
            pluginResult= [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"fail"];
        }
        //关闭扫码窗口
-       [self dismiss];
-       //返回结果
-       [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+       [[self.scanVC presentingViewController] dismissViewControllerAnimated:NO completion:^{
+           //返回结果
+           [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+       }];
     }];
 
     //扫码窗口，增加导航条
