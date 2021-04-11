@@ -66,6 +66,7 @@
   方法1:再卸载cordova-plugin-mpaas-core-higer，再次一起安装，先装core，再装scan
   方法2:platform remove ios 后，再add 进去
   >sudo cordova platform remove ios
+  
   >sudo cordova platform add ios
 
 #### 5.在build的时候，长时间没有反应
